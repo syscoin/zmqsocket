@@ -9,7 +9,7 @@ sock.connect('tcp://127.0.0.1:28332');
 if(process.env.DEV_MODE) {
   sock.on('message', function (topic, message) {
     //console.log('[raw] TOPIC:', topic, ' MESSAGE', message);
-    console.log('TOPIC:', topic.toString('utf8'), ' MESSAGE', message.toString('hex'));
+    console.log('[~debug~] TOPIC:', topic.toString('utf8'), ' MESSAGE', message.toString('hex'));
   });
 }
 
@@ -27,7 +27,7 @@ echo.on('connection', function(conn) {
 
   sock.on('message', function(topic, message) {
     //console.log('[raw] TOPIC:', topic, ' MESSAGE', message);
-    console.log('[client connected] TOPIC:', topic.toString('utf8'), ' MESSAGE', message.toString('hex'));
+    console.log('[->client] TOPIC:', topic.toString('utf8'), ' MESSAGE', message.toString('hex'));
 
     conn.write({ topic: topic.toString('utf8'), message: message.toString('hex')});
   });
