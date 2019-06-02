@@ -23,10 +23,13 @@ echo.on('connection', function(conn) {
       //console.log('[raw] TOPIC:', topic, ' MESSAGE', message);
       console.log('TOPIC:', topic.toString('utf8'), ' MESSAGE', message.toString('hex'));
 
-      conn.write('marker', { topic: topic.toString('utf8'), message: message.toString('hex')});
+      conn.write({ topic: topic.toString('utf8'), message: message.toString('hex')});
     });
   });
-  conn.on('close', function() {});
+
+  conn.on('close', function() {
+    console.log("client disconnected");
+  });
 });
 
 const server = http.createServer();
