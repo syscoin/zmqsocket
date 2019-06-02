@@ -1,0 +1,9 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+<script>
+  var socket = io.connect('http://localhost:8080');
+  socket.on('marker', function (data) {
+    console.log(data);
+  });
+</script>

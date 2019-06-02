@@ -1,0 +1,17 @@
+{
+  "name": "zmqsocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "socket.io": "^2.2.0",
+    "zeromq": "^5.1.0",
+    "zmq": "^2.15.3"
+  }
+}
