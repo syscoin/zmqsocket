@@ -2,9 +2,12 @@ const http = require('http');
 const sockjs = require('sockjs');
 const zmq = require('zeromq');
 const sock = zmq.socket('sub');
+const config = require('config').Config;
+
+console.log("ZQMSocket starting with config:", JSON.stringify(config));
 
 // connect to ZMQ
-sock.connect('tcp://127.0.0.1:28332');
+sock.connect(config.zmq_address);
 
 if(process.env.DEV_MODE) {
   sock.on('message', function (topic, message) {
@@ -45,6 +48,6 @@ function handleMessage(topic, message) {
 
 const server = http.createServer();
 echo.installHandlers(server);
-server.listen(9999, '0.0.0.0');
+server.listen(config.ws_port, '0.0.0.0');
 
 

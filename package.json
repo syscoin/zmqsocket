@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^12.0.7",
+    "dotenv": "^8.0.0",
     "fs": "0.0.1-security",
     "sockjs": "^0.3.19",
     "zeromq": "^5.1.0"
