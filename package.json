@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "DEV_MODE=true node app.js",
+    "start": "node index.js",
+    "dev": "DEV=true node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-server": "node start-server.js"
   },
