@@ -45,7 +45,6 @@ module.exports = {
     }
 
     sock.subscribe(TOPIC.HASH_BLOCK);
-    sock.subscribe(TOPIC.HASH_TX);
     sock.subscribe(TOPIC.WALLET_STATUS);
     sock.subscribe(TOPIC.ETH_STATUS);
     sock.subscribe(TOPIC.NETWORK_STATUS);
