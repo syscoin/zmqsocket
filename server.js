@@ -78,13 +78,16 @@ module.exports = {
 
 function handleMessage(topic, message, conn) {
   if (conn) {
+    if (!process.env.DEV) {
+      console.log(topic.toString('utf8'));
+    }
     let msgPayload;
     switch (topic.toString('utf8')) {
       case TOPIC.NETWORK_STATUS:
       case TOPIC.WALLET_RAW_TX:
       case TOPIC.WALLET_STATUS:
       case TOPIC.ETH_STATUS:
-        msgPayload = message.toJSON();
+        msgPayload = message.toString();
         break;
 
       default:
