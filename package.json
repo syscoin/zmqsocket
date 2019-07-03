@@ -1,5 +1,5 @@
 {
-  "name": "zmqsocket",
+  "name": "@syscoin/zmqsocket",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
